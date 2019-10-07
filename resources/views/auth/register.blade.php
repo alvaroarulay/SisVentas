@@ -1,10 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-            <div class="card mx-4">
+<section class="material-half-bg">
+    <div class="cover"></div>
+    </section>
+    <section class="login-content">
+      <div class="logo">
+        <h1>Ventas</h1>
+      </div>
+      <div class="col-md-6">
+            <div class="card mx-4 login-box">
                 <div class="card-body p-4">
                     <h1>Registrate!</h1>
                     <p class="text-muted">Crea tu Cuenta</p>
@@ -12,9 +17,7 @@
                         @csrf
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
-                        <span class="input-group-text">
-                        <i class="icon-user"></i>
-                        </span>
+                        <span class="input-group-text"><i class="fa fa-user"></i></span>
                         </div>
                         <input id="usuario" type="text" class="form-control @error('usuario') is-invalid @enderror" name="usuario" value="{{ old('usuario') }}" required autocomplete="usuario" autofocus placeholder="Nombre de Usuario">
 
@@ -39,7 +42,7 @@
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                         <span class="input-group-text">
-                        <i class="icon-lock"></i>
+                        <i class="fa fa-unlock-alt" aria-hidden="true"></i>
                         </span>
                         </div>
                         <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="Contraseña">
@@ -53,12 +56,12 @@
                     <div class="input-group mb-4">
                         <div class="input-group-prepend">
                         <span class="input-group-text">
-                        <i class="icon-lock"></i>
+                        <i class="fa fa-unlock-alt" aria-hidden="true"></i>
                         </span>
                         </div>
                         <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" placeholder="Repite tu contraseña">
                     </div>
-                    <button class="btn btn-block btn-success" type="submit">Crear Cuenta</button>
+                    <button class="btn btn-block btn-primary" type="submit">Crear Cuenta</button>
                     </form>
                 </div>
                 <div class="card-footer p-4">
@@ -77,7 +80,8 @@
                 </div>
             </div>
         </div>
-    </div>
-</div>
+        
+    </section>
+
 
 @endsection

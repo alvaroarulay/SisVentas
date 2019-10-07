@@ -1,6 +1,6 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
+<!DOCTYPE html>
+<html lang="es">
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -8,102 +8,103 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ config('app.name', 'Ventas') }}</title>
     <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="{{ asset('js/template.js') }}" defer></script>
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
+   
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
-    <!--icons -->
-    <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/simple-line-icons.min.css') }}" rel="stylesheet">
-</head>
-<body>
-    <div id="app">
- <header class="app-header navbar">
-        <button class="navbar-toggler mobile-sidebar-toggler d-lg-none mr-auto" type="button">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <a class="navbar-brand" href="#"></a>
-        <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <ul class="nav navbar-nav d-md-down-none">
-            <li class="nav-item px-3">
-                <a class="nav-link" href="#">Escritorio</a>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="{{ asset('css/main.css') }}" rel="stylesheet">
+  </head>
+  <body class="app sidebar-mini">
+  <div id="app">
+  @guest 
+  <header class="app-header">
+    <ul class="app-nav">
+      <li class="nav-item">
+            <a class="nav-link text-white" href="{{ route('login') }}">{{ __('Iniciar Sesión ') }} </a>
+        </li>
+        @if (Route::has('register'))
+            <li class="nav-item">
+                <a class="nav-link text-white" href="{{ route('register') }}"> {{ __(' Registrate') }}</a>
             </li>
-            <li class="nav-item px-3">
-                <a class="nav-link" href="#">Configuraciones</a>
-            </li>
-        </ul>
-        <ul class="nav navbar-nav ml-auto">
-            <li class="nav-item d-md-down-none">
-                <a class="nav-link" href="#" data-toggle="dropdown">
-                    <i class="icon-bell"></i>
-                    <span class="badge badge-pill badge-danger">5</span>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right">
-                    <div class="dropdown-header text-center">
-                        <strong>Notificaciones</strong>
-                    </div>
-                    <a class="dropdown-item" href="#">
-                        <i class="fa fa-envelope-o"></i> Ingresos
-                        <span class="badge badge-success">3</span>
-                    </a>
-                    <a class="dropdown-item" href="#">
-                        <i class="fa fa-tasks"></i> Ventas
-                        <span class="badge badge-danger">2</span>
-                    </a>
-                </div>
-            </li>
-             @guest
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('login') }}">{{ __('Iniciar Sesión ') }} </a>
-                </li>
-                @if (Route::has('register'))
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('register') }}"> {{ __(' Registrate') }}</a>
-                    </li>
-                @endif
-             @else
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                <span class="d-md-down-none"> {{ Auth::user()->usuario }} </span>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right">
-                    <div class="dropdown-header text-center">
-                        <strong>Cuenta</strong>
-                    </div>
-                    <a class="dropdown-item" href="#"><i class="fa fa-user"></i> Perfil</a>
-                    <a class="dropdown-item" href="{{ route('logout') }}"
+        @endif
+    </ul>
+  </header>
+  @else
+    <!-- Navbar-->
+    <header class="app-header"><a class="app-header__logo" href="/">Ventas</a>
+      <!-- Sidebar toggle button--><a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
+      <!-- Navbar Right Menu-->
+      <ul class="app-nav">
+        <li class="app-search">
+          <input class="app-search__input" type="search" placeholder="Search">
+          <button class="app-search__button"><i class="fa fa-search"></i></button>
+        </li>
+        <!--Notification Menu-->
+        <li class="dropdown"><a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Show notifications"><i class="fa fa-bell-o fa-lg"></i></a>
+          <ul class="app-notification dropdown-menu dropdown-menu-right">
+            <li class="app-notification__title">You have 4 new notifications.</li>
+            <div class="app-notification__content">
+              <li><a class="app-notification__item" href="javascript:;"><span class="app-notification__icon"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x text-primary"></i><i class="fa fa-envelope fa-stack-1x fa-inverse"></i></span></span>
+                  <div>
+                    <p class="app-notification__message">Lisa sent you a mail</p>
+                    <p class="app-notification__meta">2 min ago</p>
+                  </div></a></li>
+              <li><a class="app-notification__item" href="javascript:;"><span class="app-notification__icon"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x text-danger"></i><i class="fa fa-hdd-o fa-stack-1x fa-inverse"></i></span></span>
+                  <div>
+                    <p class="app-notification__message">Mail server not working</p>
+                    <p class="app-notification__meta">5 min ago</p>
+                  </div></a></li>
+              <li><a class="app-notification__item" href="javascript:;"><span class="app-notification__icon"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x text-success"></i><i class="fa fa-money fa-stack-1x fa-inverse"></i></span></span>
+                  <div>
+                    <p class="app-notification__message">Transaction complete</p>
+                    <p class="app-notification__meta">2 days ago</p>
+                  </div></a></li>
+              <div class="app-notification__content">
+                <li><a class="app-notification__item" href="javascript:;"><span class="app-notification__icon"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x text-primary"></i><i class="fa fa-envelope fa-stack-1x fa-inverse"></i></span></span>
+                    <div>
+                      <p class="app-notification__message">Lisa sent you a mail</p>
+                      <p class="app-notification__meta">2 min ago</p>
+                    </div></a></li>
+                <li><a class="app-notification__item" href="javascript:;"><span class="app-notification__icon"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x text-danger"></i><i class="fa fa-hdd-o fa-stack-1x fa-inverse"></i></span></span>
+                    <div>
+                      <p class="app-notification__message">Mail server not working</p>
+                      <p class="app-notification__meta">5 min ago</p>
+                    </div></a></li>
+                <li><a class="app-notification__item" href="javascript:;"><span class="app-notification__icon"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x text-success"></i><i class="fa fa-money fa-stack-1x fa-inverse"></i></span></span>
+                    <div>
+                      <p class="app-notification__message">Transaction complete</p>
+                      <p class="app-notification__meta">2 days ago</p>
+                    </div></a></li>
+              </div>
+            </div>
+            <li class="app-notification__footer"><a href="#">See all notifications.</a></li>
+          </ul>
+        </li>
+            <li class="dropdown"><a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-user fa-lg"></i></a>
+              <ul class="dropdown-menu settings-menu dropdown-menu-right">
+                <li><a class="dropdown-item" href="page-user.html"><i class="fa fa-user fa-lg"></i> {{ Auth::user()->usuario }} </a></li>
+                <li><a class="dropdown-item" href="{{ route('logout') }}"
                        onclick="event.preventDefault();
-                       document.getElementById('logout-form').submit();">
-                    <i class="fa fa-lock"></i>
-                        {{ __('Cerrar sesión') }}
-                    </a>
-
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                       document.getElementById('logout-form').submit();"><i class="fa fa-sign-out fa-lg"></i> {{ __('Salir') }}</a>
+                       <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         @csrf
                     </form>
-                    
-                </div>
-            </li>
-            @endguest
+                </li>
+              </ul>
+            </li> 
         </ul>
     </header>
-        <main class="py-4">
-            @yield('content')
-        </main>
+    <!-- Sidebar menu-->
+    @include('plantilla.sidebar')
+    @endguest 
+    @yield('content')
     </div>
-
-  <!-- Bootstrap and necessary plugins -->
-    <script src="js/popper.min.js"></script>
-    <script src="js/pace.min.js"></script>
-    <!-- Plugins and scripts required by all views -->
-    <script src="js/Chart.min.js"></script>
-    <!-- GenesisUI main scripts -->
-    <script src="js/template.js"></script>
-</body>
-</html>
+    
+    <!-- Essential javascripts for application to work-->
+    <script src="{{ asset('js/jquery-3.2.1.min.js') }}" defer></script>
+    <script src="{{ asset('js/popper.min.js') }}" defer></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}" defer></script>
+    <script src="{{ asset('js/main.js') }}" defer></script>  
+    <!--The javascript plugin to display page loading on top-->
+    <script src="{{ asset('js/plugins/pace.min.js') }}" defer></script>
+    @yield('scripts')
+  </body>
