@@ -1,46 +1,109 @@
 @extends('layouts.app')
 
 @section('content')
-<main class="app-content">
-     <template v-if="menu==0">
-        <h1>soy el menu 0</h1>
-        
-     </template>
-     <template v-if="menu==1">
-        <h1>soy el menu 1</h1>
-     </template>
-     <template v-if="menu==2">
-        <h1>soy el menu 2</h1>
-     </template>
-     <template v-if="menu==3">
-        <h1>soy el menu 3</h1>
-     </template>
-     <template v-if="menu==4">
-        <h1>soy el menu 4</h1>
-     </template>
-     <template v-if="menu==5">
-        <h1>soy el menu 5</h1>
-     </template>
-     <template v-if="menu==6">
-        <h1>soy el menu 6</h1>
-     </template>
-     <template v-if="menu==7">
-        <h1>soy el menu 7</h1>
-     </template>
-     <template v-if="menu==8">
-        <h1>soy el menu 8</h1>
-     </template>
-     <template v-if="menu==9">
-        <h1>soy el menu 9</h1>
-     </template>
-     <template v-if="menu==10">
-        <h1>soy el menu 10</h1>
-     </template>
-     <template v-if="menu==11">
-        <h1>soy el menu 11</h1>
-     </template>
-     <template v-if="menu==12">
-        <h1>soy el menu 12</h1>
-     </template>
-</main>
+@if(Auth::check())
+            @if (Auth::user()->idrol == 1)
+            <template v-if="menu==0">
+                <h1>Escritorio</h1>
+            </template>
+            <template v-if="menu==1">
+                <h1>Configuraciones</h1>
+            </template>
+            <template v-if="menu==2">
+                <categoria></categoria>
+            </template>
+
+            <template v-if="menu==3">
+                <articulo></articulo>
+            </template>
+
+            <template v-if="menu==4">
+                <ingreso></ingreso>
+            </template>
+
+            <template v-if="menu==5">
+                <proveedor></proveedor>
+            </template>
+
+            <template v-if="menu==6">
+                <venta></venta>
+            </template>
+
+            <template v-if="menu==7">
+                <cliente></cliente>
+            </template>
+
+            <template v-if="menu==8">
+                <user></user>
+            </template>
+
+            <template v-if="menu==9">
+                <rol></rol>
+            </template>
+
+            <template v-if="menu==10">
+                <h1>Reporte ingresos</h1>
+            </template>
+
+            <template v-if="menu==11">
+                <h1>Reporte de ventas</h1>
+            </template>
+
+            <template v-if="menu==12">
+                <h1>Ayuda</h1>
+            </template>
+
+            <template v-if="menu==13">
+                <h1>Acerca de</h1>
+            </template>
+            @elseif (Auth::user()->idrol == 2)
+            <template v-if="menu==6">
+                <venta></venta>
+            </template>
+
+            <template v-if="menu==7">
+                <cliente></cliente>
+            </template>
+            <template v-if="menu==11">
+                <h1>Reporte de ventas</h1>
+            </template>
+
+            <template v-if="menu==12">
+                <h1>Ayuda</h1>
+            </template>
+
+            <template v-if="menu==13">
+                <h1>Acerca de</h1>
+            </template>
+            @elseif (Auth::user()->idrol == 3)
+            <template v-if="menu==2">
+                <categoria></categoria>
+            </template>
+
+            <template v-if="menu==3">
+                <articulo></articulo>
+            </template>
+
+            <template v-if="menu==4">
+                <ingreso></ingreso>
+            </template>
+
+            <template v-if="menu==5">
+                <proveedor></proveedor>
+            </template>
+            <template v-if="menu==10">
+                <h1>Reporte ingresos</h1>
+            </template>
+            <template v-if="menu==12">
+                <h1>Ayuda</h1>
+            </template>
+
+            <template v-if="menu==13">
+                <h1>Acerca de</h1>
+            </template>
+            @else
+
+            @endif
+
+    @endif
 @endsection

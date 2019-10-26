@@ -8,9 +8,9 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ config('app.name', 'Ventas') }}</title>
     <script src="{{ asset('js/app.js') }}" defer></script>
-   
     <!-- Styles -->
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
   </head>
   <body class="app sidebar-mini">
@@ -106,5 +106,6 @@
     <script src="{{ asset('js/main.js') }}" defer></script>  
     <!--The javascript plugin to display page loading on top-->
     <script src="{{ asset('js/plugins/pace.min.js') }}" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     @yield('scripts')
   </body>
