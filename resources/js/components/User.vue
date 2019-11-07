@@ -2,7 +2,8 @@
 <main class="app-content">
     <div class="app-title">
         <div>
-         <i class="fa fa-align-justify"></i> Usuarios
+            <h1><i class="fa fa-align-justify"></i> Usuarios</h1>
+         <br>
          <button type="button" @click="abrirModal('persona','registrar')" class="btn btn-secondary"><i class="fa fa-plus"></i>&nbsp;Nuevo</button>
         </div>
     </div>

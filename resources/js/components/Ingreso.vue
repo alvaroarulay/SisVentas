@@ -3,6 +3,7 @@
     <div class="app-title">
         <div>
           <h1><i class="fa fa-align-justify"></i> Ingresos</h1> 
+          <br>
           <button type="button" @click="mostrarDetalle()" class="btn btn-secondary"><i class="fa fa-plus"></i>&nbsp;Nuevo</button>
         </div>
     </div>

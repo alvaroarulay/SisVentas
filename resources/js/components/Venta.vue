@@ -2,7 +2,8 @@
 <main class="app-content">
     <div class="app-title">
         <div>
-         <i class="fa fa-align-justify"></i> Ventas
+            <h1>  <i class="fa fa-align-justify"></i> Ventas</h1>
+       <br>
         <button type="button" @click="mostrarDetalle()" class="btn btn-secondary"> <i class="fa fa-plus"></i>&nbsp;Nuevo</button>
         </div>
     </div>
@@ -679,7 +680,6 @@
                     'impuesto' : this.impuesto,
                     'total' : this.total,
                     'data': this.arrayDetalle
-
                 }).then(function (response) {
                     me.listado=1;
                     me.listarVenta(1,'','num_comprobante');

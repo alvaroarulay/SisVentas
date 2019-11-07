@@ -2,7 +2,8 @@
 <main class="app-content">
     <div class="app-title">
         <div>
-          <i class="fa fa-align-justify"></i> Roles
+            <h1><i class="fa fa-align-justify"></i> Roles</h1>
+        <br>
         </div>
     </div>
     <div class="form-group row">

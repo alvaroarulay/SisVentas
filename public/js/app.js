@@ -2007,6 +2007,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -2085,6 +2088,9 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {
         console.log(error);
       });
+    },
+    cargarPdf: function cargarPdf() {
+      window.open('http://primeraventas.local/articulo/listarPdf', '_blank');
     },
     selectCategoria: function selectCategoria() {
       var me = this;
@@ -2291,6 +2297,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
 //
 //
 //
@@ -2806,6 +2813,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -3006,6 +3014,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_select__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue_select__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var vue_select_dist_vue_select_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-select/dist/vue-select.css */ "./node_modules/vue-select/dist/vue-select.css");
 /* harmony import */ var vue_select_dist_vue_select_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue_select_dist_vue_select_css__WEBPACK_IMPORTED_MODULE_1__);
+//
 //
 //
 //
@@ -3950,6 +3959,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -4225,6 +4235,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -4316,6 +4327,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
 //
 //
 //
@@ -4795,6 +4807,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_select__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-select */ "./node_modules/vue-select/dist/vue-select.js");
 /* harmony import */ var vue_select__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue_select__WEBPACK_IMPORTED_MODULE_0__);
+//
 //
 //
 //
@@ -28171,6 +28184,8 @@ var render = function() {
       _c("div", [
         _vm._m(0),
         _vm._v(" "),
+        _c("br"),
+        _vm._v(" "),
         _c(
           "button",
           {
@@ -28183,6 +28198,20 @@ var render = function() {
             }
           },
           [_c("i", { staticClass: "fa fa-plus" }), _vm._v(" Nuevo")]
+        ),
+        _vm._v(" "),
+        _c(
+          "button",
+          {
+            staticClass: "btn bta-info",
+            attrs: { type: "button" },
+            on: {
+              click: function($event) {
+                return _vm.cargarPdf()
+              }
+            }
+          },
+          [_c("i", { staticClass: "fa fa-file-pdf" }), _vm._v(" Reporte")]
         )
       ])
     ]),
@@ -28957,6 +28986,8 @@ var render = function() {
       _c("div", [
         _vm._m(0),
         _vm._v(" "),
+        _c("br"),
+        _vm._v(" "),
         _c(
           "button",
           {
@@ -29528,8 +29559,10 @@ var render = function() {
   return _c("main", { staticClass: "app-content" }, [
     _c("div", { staticClass: "app-title" }, [
       _c("div", [
-        _c("i", { staticClass: "fa fa-align-justify" }),
-        _vm._v(" Clientes\r\n        "),
+        _vm._m(0),
+        _vm._v(" "),
+        _c("br"),
+        _vm._v(" "),
         _c(
           "button",
           {
@@ -29648,7 +29681,7 @@ var render = function() {
               "table",
               { staticClass: "table table-bordered table-striped table-sm" },
               [
-                _vm._m(0),
+                _vm._m(1),
                 _vm._v(" "),
                 _c(
                   "tbody",
@@ -30179,6 +30212,15 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
+    return _c("h1", [
+      _c("i", { staticClass: "fa fa-align-justify" }),
+      _vm._v(" Clientes")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
     return _c("thead", [
       _c("tr", [
         _c("th", [_vm._v("Opciones")]),
@@ -30226,6 +30268,8 @@ var render = function() {
       _c("div", { staticClass: "app-title" }, [
         _c("div", [
           _vm._m(0),
+          _vm._v(" "),
+          _c("br"),
           _vm._v(" "),
           _c(
             "button",
@@ -31891,8 +31935,10 @@ var render = function() {
   return _c("main", { staticClass: "app-content" }, [
     _c("div", { staticClass: "app-title" }, [
       _c("div", [
-        _c("i", { staticClass: "fa fa-align-justify" }),
-        _vm._v(" Proveedores\r\n            "),
+        _vm._m(0),
+        _vm._v(" "),
+        _c("br"),
+        _vm._v(" "),
         _c(
           "button",
           {
@@ -32014,7 +32060,7 @@ var render = function() {
                 attrs: { id: "sampleTable" }
               },
               [
-                _vm._m(0),
+                _vm._m(1),
                 _vm._v(" "),
                 _c(
                   "tbody",
@@ -32625,6 +32671,15 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
+    return _c("h1", [
+      _c("i", { staticClass: "fa fa-align-justify" }),
+      _vm._v(" Proveedores")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
     return _c("thead", [
       _c("tr", [
         _c("th", [_vm._v("Nombre")]),
@@ -32902,8 +32957,12 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "app-title" }, [
       _c("div", [
-        _c("i", { staticClass: "fa fa-align-justify" }),
-        _vm._v(" Roles\r\n        ")
+        _c("h1", [
+          _c("i", { staticClass: "fa fa-align-justify" }),
+          _vm._v(" Roles")
+        ]),
+        _vm._v(" "),
+        _c("br")
       ])
     ])
   },
@@ -32946,8 +33005,10 @@ var render = function() {
   return _c("main", { staticClass: "app-content" }, [
     _c("div", { staticClass: "app-title" }, [
       _c("div", [
-        _c("i", { staticClass: "fa fa-align-justify" }),
-        _vm._v(" Usuarios\r\n         "),
+        _vm._m(0),
+        _vm._v(" "),
+        _c("br"),
+        _vm._v(" "),
         _c(
           "button",
           {
@@ -33066,7 +33127,7 @@ var render = function() {
               "table",
               { staticClass: "table table-bordered table-striped table-sm" },
               [
-                _vm._m(0),
+                _vm._m(1),
                 _vm._v(" "),
                 _c(
                   "tbody",
@@ -33784,6 +33845,15 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
+    return _c("h1", [
+      _c("i", { staticClass: "fa fa-align-justify" }),
+      _vm._v(" Usuarios")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
     return _c("thead", [
       _c("tr", [
         _c("th", [_vm._v("Opciones")]),
@@ -33834,8 +33904,10 @@ var render = function() {
     [
       _c("div", { staticClass: "app-title" }, [
         _c("div", [
-          _c("i", { staticClass: "fa fa-align-justify" }),
-          _vm._v(" Ventas\r\n        "),
+          _vm._m(0),
+          _vm._v(" "),
+          _c("br"),
+          _vm._v(" "),
           _c(
             "button",
             {
@@ -33959,7 +34031,7 @@ var render = function() {
                           "table table-bordered table-striped table-sm"
                       },
                       [
-                        _vm._m(0),
+                        _vm._m(1),
                         _vm._v(" "),
                         _c(
                           "tbody",
@@ -34591,7 +34663,7 @@ var render = function() {
                       staticClass: "table table-bordered table-striped table-sm"
                     },
                     [
-                      _vm._m(1),
+                      _vm._m(2),
                       _vm._v(" "),
                       _vm.arrayDetalle.length
                         ? _c(
@@ -34768,7 +34840,7 @@ var render = function() {
                                   staticStyle: { "background-color": "#CEECF5" }
                                 },
                                 [
-                                  _vm._m(2),
+                                  _vm._m(3),
                                   _vm._v(" "),
                                   _c("td", [
                                     _vm._v(
@@ -34789,7 +34861,7 @@ var render = function() {
                                   staticStyle: { "background-color": "#CEECF5" }
                                 },
                                 [
-                                  _vm._m(3),
+                                  _vm._m(4),
                                   _vm._v(" "),
                                   _c("td", [
                                     _vm._v(
@@ -34811,7 +34883,7 @@ var render = function() {
                                   staticStyle: { "background-color": "#CEECF5" }
                                 },
                                 [
-                                  _vm._m(4),
+                                  _vm._m(5),
                                   _vm._v(" "),
                                   _c("td", [
                                     _vm._v(
@@ -34824,7 +34896,7 @@ var render = function() {
                             ],
                             2
                           )
-                        : _c("tbody", [_vm._m(5)])
+                        : _c("tbody", [_vm._m(6)])
                     ]
                   )
                 ])
@@ -34920,7 +34992,7 @@ var render = function() {
                       staticClass: "table table-bordered table-striped table-sm"
                     },
                     [
-                      _vm._m(6),
+                      _vm._m(7),
                       _vm._v(" "),
                       _vm.arrayDetalle.length
                         ? _c(
@@ -34971,7 +35043,7 @@ var render = function() {
                                   staticStyle: { "background-color": "#CEECF5" }
                                 },
                                 [
-                                  _vm._m(7),
+                                  _vm._m(8),
                                   _vm._v(" "),
                                   _c("td", [
                                     _vm._v(
@@ -34992,7 +35064,7 @@ var render = function() {
                                   staticStyle: { "background-color": "#CEECF5" }
                                 },
                                 [
-                                  _vm._m(8),
+                                  _vm._m(9),
                                   _vm._v(" "),
                                   _c("td", [
                                     _vm._v(
@@ -35013,7 +35085,7 @@ var render = function() {
                                   staticStyle: { "background-color": "#CEECF5" }
                                 },
                                 [
-                                  _vm._m(9),
+                                  _vm._m(10),
                                   _vm._v(" "),
                                   _c("td", [_vm._v("$ " + _vm._s(_vm.total))])
                                 ]
@@ -35021,7 +35093,7 @@ var render = function() {
                             ],
                             2
                           )
-                        : _c("tbody", [_vm._m(10)])
+                        : _c("tbody", [_vm._m(11)])
                     ]
                   )
                 ])
@@ -35216,7 +35288,7 @@ var render = function() {
                           "table table-bordered table-striped table-sm"
                       },
                       [
-                        _vm._m(11),
+                        _vm._m(12),
                         _vm._v(" "),
                         _c(
                           "tbody",
@@ -35351,6 +35423,15 @@ var render = function() {
   )
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h1", [
+      _c("i", { staticClass: "fa fa-align-justify" }),
+      _vm._v(" Ventas")
+    ])
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement

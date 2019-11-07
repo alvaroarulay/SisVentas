@@ -62,7 +62,14 @@ class ArticuloController extends Controller
 
         return ['articulos' => $articulos];
     }
- 
+    public function listarPdf(){
+        $articulos = Articulo::join('categorias','articulos.idcategoria','=','categorias.id')
+        ->select('articulos.id','articulos.idcategoria','articulos.codigo','articulos.nombre','categorias.nombre as nombre_categoria','articulos.precio_venta','articulos.stock','articulos.descripcion','articulos.condicion')
+        ->orderBy('articulos.id', 'desc')->get();
+        $count=Articulo::count();
+        $pdf=\PDF::loadView('pdf.articulospdf',['articulos'=>$articulos,'cont'=>$count]);
+        return $pdf->download('articulos.pdf');
+    }
     public function listarArticuloVenta(Request $request)
     {
         if (!$request->ajax()) return redirect('/');

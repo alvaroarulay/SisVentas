@@ -3,7 +3,9 @@
     <div class="app-title">
         <div>
           <h1><i class="fa fa-th-list"></i> Articulos</h1> 
+          <br>
           <button type="button" @click="abrirModal('articulo','registrar')" class="btn btn-secondary"><i class="fa fa-plus"></i>&nbsp;Nuevo</button>
+          <button type="button" @click="cargarPdf()" class="btn bta-info"><i class="fa fa-file-pdf"></i>&nbsp;Reporte</button>
         </div>
     </div>
     <div class="form-group row">
@@ -15,6 +17,7 @@
                 </select>
                 <input type="text" v-model="buscar" @keyup.enter="listarArticulo(1,buscar,criterio)" class="form-control" placeholder="Texto a buscar">
                 <button type="submit" @click="listarArticulo(1,buscar,criterio)" class="btn btn-primary"><i class="fa fa-search"></i> Buscar</button>
+                
                 </div>
         </div>
     </div>
@@ -242,6 +245,9 @@
                 .catch(function (error) {
                     console.log(error);
                 });
+            },
+            cargarPdf(){
+                window.open('http://primeraventas.local/articulo/listarPdf','_blank');
             },
             selectCategoria(){
                 let me=this;
